@@ -3,22 +3,64 @@
 ![kofa-boyah-St-6SCwofGo-unsplash](https://github.com/user-attachments/assets/0af78136-52f9-4de2-9677-a2dc9196194b)
 
 ## Problem Statement
-
-## Project Overview
+Using historical data from the Armed Conflict Location & Event Data research (ACLED), this research develops a predictive model to categorise conflict incidents in Kenya into four severity levels (Low, Moderate, High, and Critical). By achieving the accuracy, precision, F1-score and confusion matrix the approach assists government agencies, peacekeeping forces and humanitarian organisations in better allocating resources and prioritising response activities.
 
 ## Business Understanding
+Kenya has had a lot of protests in recent years, motivated by social, political, and economic issues. These incidents frequently intensify quickly and have different effects on the community. Decision-makers do not currently have access to efficient real-time tools for anticipating possible outcomes.
 
-## Components
+Objectives :
+a) Establish a predictive model that divides conflict incidents into four tiers of severity.
+b) Using past ACLED data, to create a Community Impact Score (CIS).
+c) Assist stakeholders in allocating resources and setting priorities for response activities.
 
-## Technologies/Packages
+## Data Understanding
+The project makes use of information from the Armed Conflict Location & Event Data initiative (ACLED), which offers comprehensive logs of events connected to conflicts throughout Africa. More than 431,000 records from 1997 to 2025 are included in the raw dataset, with 17,812 events occurring in Kenya alone.
 
-## To get started
+Significant factors consist of:
+- Fatalities.
+- Actors Involved.
+- Event type (Protests, Battles, Explosions/Remote violence, etc.).
+- Civilian targeting.
+- Narrative descriptions.
+- Geographic coordinates.
 
 ## 1. Data Wrangling
+Here we will work on : 
+- Filtering Kenya-specific data (17,812 events).
+- Handling missing values (imputation and column dropping).
+- Text data cleaning (removing special characters, lowercasing).
+- Feature engineering:
+      -Combined actor columns.
+      -Created Community Impact Score (CIS).
+      -Mapped CIS to severity levels.
+- Date parsing.
+
+which ensures that we have a clean, structured, and suitable format for analysis and modeling.
 
 ## 2. Exploratory Data Analysis(EDA)
+<img width="790" height="490" alt="Distribution of Conflict Severity levels" src="https://github.com/user-attachments/assets/fb759102-f542-4a61-82e9-d590b55cd3d0" />
+
+<img width="1189" height="590" alt="Event type vs Severity level" src="https://github.com/user-attachments/assets/3cec46e1-4873-468d-880b-79dc9c7e15df" />
+
+<img width="1189" height="590" alt="Fatalities by event type" src="https://github.com/user-attachments/assets/b2c82338-f3e6-4078-a759-bd8aee08d31c" />
+
+<img width="1190" height="590" alt="Fatalities by Location" src="https://github.com/user-attachments/assets/ebc445d9-8821-4450-9628-617576d07022" />
+
+<img width="1190" height="590" alt="Severity level Trends over Time" src="https://github.com/user-attachments/assets/762de25a-812f-4bbf-99ba-a0ca962d372c" />
+
+<img width="990" height="490" alt="Top 10 locations with most critical events" src="https://github.com/user-attachments/assets/cc56a045-d483-4514-b322-d257ca19d7f2" />
+
+<img width="989" height="490" alt="Top primary Actors" src="https://github.com/user-attachments/assets/e1887431-a6df-472d-8627-6da41c085e0d" />
+
+<img width="989" height="490" alt="Top Secondary Actors" src="https://github.com/user-attachments/assets/9956df12-e0a7-4251-a6e7-b495c10702e8" />
+
 
 ## 3. Data Processing
+To prevent data leaking, only features that were accessible prior to or during a conflict occurrence were employed to prepare the data for modelling.  These comprised important numerical and categorical information (e.g., year, month, latitude, longitude) as well as event type, actors, and location.
+
+ To ensure class balance, stratified sampling was used to divide the data into training and testing sets.  Numerical features were standardised for consistency, while categorical features were one-hot encoded.
+
+ SMOTE was used to improve model fairness and oversample minority classes in order to address class imbalance in the target variable (severity_level).
 
 ## 4. Modelling and Evaluation
 
@@ -27,3 +69,11 @@
 ## 6. Conclusion
 
 ## Contributors:
+
+| Name             | GitHub Profile |
+|:-----------------|:---------------|
+| Endalkachew Dessalegne     |  |
+| Danton Kipngeno            |  |
+| Zeena Karari               |  |
+| Noel Seda                  |  |
+| James Gatonye              |  |
