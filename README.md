@@ -9,8 +9,11 @@ Using historical data from the Armed Conflict Location & Event Data research (AC
 Kenya has had a lot of protests in recent years, motivated by social, political, and economic issues. These incidents frequently intensify quickly and have different effects on the community. Decision-makers do not currently have access to efficient real-time tools for anticipating possible outcomes.
 
 Objectives :
+
 a) Establish a predictive model that divides conflict incidents into four tiers of severity.
+
 b) Using past ACLED data, to create a Community Impact Score (CIS).
+
 c) Assist stakeholders in allocating resources and setting priorities for response activities.
 
 ## Data Understanding
@@ -38,6 +41,7 @@ Here we will work on :
 which ensures that we have a clean, structured, and suitable format for analysis and modeling.
 
 ## 2. Exploratory Data Analysis(EDA)
+The graph illustrates the distribution of conflict severity levels in Kenya, with the biggest number of occurrences falling under the "Low" severity category, followed by "Moderate," "High," and "Critical." This suggests that although disputes occur frequently, the majority are not very serious, though a significant number do.
 <img width="790" height="490" alt="Distribution of Conflict Severity levels" src="https://github.com/user-attachments/assets/fb759102-f542-4a61-82e9-d590b55cd3d0" />
 
 <img width="1189" height="590" alt="Event type vs Severity level" src="https://github.com/user-attachments/assets/3cec46e1-4873-468d-880b-79dc9c7e15df" />
