@@ -41,22 +41,18 @@ Here we will work on :
 which ensures that we have a clean, structured, and suitable format for analysis and modeling.
 
 ## 2. Exploratory Data Analysis(EDA)
+
 The graph illustrates the distribution of conflict severity levels in Kenya, with the biggest number of occurrences falling under the "Low" severity category, followed by "Moderate," "High," and "Critical." This suggests that although disputes occur frequently, the majority are not very serious, though a significant number do.
 <img width="790" height="490" alt="Distribution of Conflict Severity levels" src="https://github.com/user-attachments/assets/fb759102-f542-4a61-82e9-d590b55cd3d0" />
 
+Violence and battles drive most high-severity conflicts, while protests and strategic events typically remain low-risk. These patterns validate the Community Impact Score's severity weightings.
 <img width="1189" height="590" alt="Event type vs Severity level" src="https://github.com/user-attachments/assets/3cec46e1-4873-468d-880b-79dc9c7e15df" />
 
-<img width="1189" height="590" alt="Fatalities by event type" src="https://github.com/user-attachments/assets/b2c82338-f3e6-4078-a759-bd8aee08d31c" />
-
+Mandera and Garissa show the highest fatalities, indicating these regions experience the most lethal conflicts. Urban areas like Nairobi and Mombasa also appear prominently, reflecting both political and intercommunal violence.
 <img width="1190" height="590" alt="Fatalities by Location" src="https://github.com/user-attachments/assets/ebc445d9-8821-4450-9628-617576d07022" />
 
+Conflict severity fluctuates over time, with noticeable spikes during election years (e.g., 2007, 2017). This pattern underscores the link between political instability and increased violence.
 <img width="1190" height="590" alt="Severity level Trends over Time" src="https://github.com/user-attachments/assets/762de25a-812f-4bbf-99ba-a0ca962d372c" />
-
-<img width="990" height="490" alt="Top 10 locations with most critical events" src="https://github.com/user-attachments/assets/cc56a045-d483-4514-b322-d257ca19d7f2" />
-
-<img width="989" height="490" alt="Top primary Actors" src="https://github.com/user-attachments/assets/e1887431-a6df-472d-8627-6da41c085e0d" />
-
-<img width="989" height="490" alt="Top Secondary Actors" src="https://github.com/user-attachments/assets/9956df12-e0a7-4251-a6e7-b495c10702e8" />
 
 
 ## 3. Data Processing
@@ -68,9 +64,15 @@ To prevent data leaking, only features that were accessible prior to or during a
 
 ## 4. Modelling and Evaluation
 
+This project uses ACLED data to guess how bad conflicts will be in Kenya (Low, Moderate, High, Critical). It does this with 86% accuracy using XGBoost and a Voting Ensemble model. Event type, civilian targeting, and actor involvement are some of the main factors that affect events. Severe events are linked to political cycles and geographic hotspots like Nairobi. We looked at the models' accuracy, recall, and F1-score. The ensemble combined their strengths to get a balanced performance. The models were Logistic Regression (baseline), Random Forest, and XGBoost. The results show that it's hard to predict minority classes (Critical), but they do show that severity classification is reliable for prioritising humanitarian response.
+
 ## 5. Deployment
 
 ## 6. Conclusion
+
+This project demonstrated that conflict event severity in Kenya can be effectively predicted using historical ACLED data. By creating a Community Impact Score and categorizing severity into four levels, a robust multi-class model was developed. The best results came from XGBoost and a Voting Ensemble, both achieving 86% accuracy and strong performance on harder-to-predict classes like "Moderate" and "Critical."
+
+Key factors influencing severity included event type, civilian targeting, and primary actors. Visual analysis showed a clear link between severe events and political cycles, with hotspots in Nairobi, Kisumu, and Turkana.
 
 ## Contributors:
 
