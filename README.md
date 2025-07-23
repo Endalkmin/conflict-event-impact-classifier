@@ -34,7 +34,9 @@ Here we will work on :
 - Text data cleaning (removing special characters, lowercasing).
 - Feature engineering:
       -Combined actor columns.
+  
       -Created Community Impact Score (CIS).
+  
       -Mapped CIS to severity levels.
 - Date parsing.
 
