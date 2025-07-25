@@ -99,7 +99,7 @@ Improve Minority Class Recall: Explore advanced techniques such as cost-sensitiv
 | Name             | GitHub Profile |
 |:-----------------|:---------------|
 | Endalkachew Dessalegne     | https://github.com/Endalkmin/ |
-| Danton Kipngeno            |  |
-| Zeena Karari               |  |
+| Danton Kipngeno            | https://github.com/Dantonkip |
+| Zeena Karari               | https://github.com/Zena-Karari |
 | Noel Seda                  | https://github.com/Noel-cyber |
-| James Gatonye              |  |
+| James Gatonye              | https://github.com/jamesggatonye/ |
