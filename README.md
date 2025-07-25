@@ -67,9 +67,16 @@ To prevent data leaking, only features that were accessible prior to or during a
 
 ## 4. Modelling and Evaluation
 
-This project uses ACLED data to guess how bad conflicts will be in Kenya (Low, Moderate, High, Critical). It does this with 86% accuracy using XGBoost and a Voting Ensemble model. Event type, civilian targeting, and actor involvement are some of the main factors that affect events. Severe events are linked to political cycles and geographic hotspots like Nairobi. We looked at the models' accuracy, recall, and F1-score. The ensemble combined their strengths to get a balanced performance. The models were Logistic Regression (baseline), Random Forest, and XGBoost. The results show that it's hard to predict minority classes (Critical), but they do show that severity classification is reliable for prioritising humanitarian response.
+The project framed conflict severity prediction as a multi-class classification problem with four levels: Low, Moderate, High, and Critical. Several models were tested:
 
-## 5. Deployment
+Logistic Regression: Served as a reliable baseline.
+
+Random Forest & XGBoost: Delivered improved performance, especially on imbalanced classes.
+
+Voting Ensemble: Combined Logistic Regression, Random Forest, and XGBoost, achieving the highest overall accuracy of 86%.
+
+The Community Impact Score (CIS) was engineered to label severity, and class imbalance was addressed using SMOTE. The ensemble model consistently outperformed others in predicting both frequent and rare classes, making it ideal for early warning systems.
+
 
 ## 6. Conclusion
 
@@ -77,12 +84,22 @@ This project demonstrated that conflict event severity in Kenya can be effective
 
 Key factors influencing severity included event type, civilian targeting, and primary actors. Visual analysis showed a clear link between severe events and political cycles, with hotspots in Nairobi, Kisumu, and Turkana.
 
+## 7. Recommendations
+
+Deploy Predictive Models: Integrate the XGBoost or Ensemble model into early warning systems to support real-time conflict risk assessment.
+
+Prioritize High-Risk Areas: Focus intervention and monitoring efforts on regions with recurring severe conflict events.
+
+Enhance Feature Set: Incorporate contextual data like socioeconomic indicators and social media signals to improve model performance.
+
+Improve Minority Class Recall: Explore advanced techniques such as cost-sensitive learning or data augmentation to better detect rare but critical events.
+
 ## Contributors:
 
 | Name             | GitHub Profile |
 |:-----------------|:---------------|
-| Endalkachew Dessalegne     |  |
+| Endalkachew Dessalegne     | https://github.com/Endalkmin/ |
 | Danton Kipngeno            |  |
 | Zeena Karari               |  |
-| Noel Seda                  |  |
+| Noel Seda                  | https://github.com/Noel-cyber |
 | James Gatonye              |  |
