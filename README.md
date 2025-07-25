@@ -80,7 +80,7 @@ The Community Impact Score (CIS) was engineered to label severity, and class imb
 
 ## 7. Conclusion
 
-This project demonstrated that conflict event severity in Kenya can be effectively predicted using historical ACLED data. By creating a Community Impact Score and categorizing severity into four levels, a robust multi-class model was developed. The best results came from XGBoost and a Voting Ensemble, both achieving 86% accuracy and strong performance on harder-to-predict classes like "Moderate" and "Critical."
+This project demonstrated that conflict event severity in Kenya can be effectively predicted using historical ACLED data. By creating a Community Impact Score and categorizing severity into four levels, a robust multi-class model was developed.The final model, the tuned Voting Ensemble model (which ensembles Logistic Regression, Random Forest and XGBoost), which is optimaized to maximize Recall of critical impact events (minimize false negatives) achived improved recall and and F2 Score and ovarall accuracy. This model is used to predict the severity of conflict events in Kenya and can be a reliable tool for prioritizing emergency response efforts.
 
 Key factors influencing severity included event type, civilian targeting, and primary actors. Visual analysis showed a clear link between severe events and political cycles, with hotspots in Nairobi, Kisumu, and Turkana.
 
@@ -92,7 +92,11 @@ Prioritize High-Risk Areas: Focus intervention and monitoring efforts on regions
 
 Enhance Feature Set: Incorporate contextual data like socioeconomic indicators and social media signals to improve model performance.
 
-Improve Minority Class Recall: Explore advanced techniques such as cost-sensitive learning or data augmentation to better detect rare but critical events.
+Improve Minority Class Recall: Explore advanced techniques such as cost-sensitive learning or data augmentation to better detect rare but critical events. 
+
+## 9. Deployment 
+Here is the web link for the conflict severity predicting model on Render platform:
+[kenya-conflict-severity-level-predictor](https://kenya-conflict-severity-predictor.onrender.com)
 
 ## Contributors:
 
