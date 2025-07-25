@@ -5,7 +5,7 @@
 ## Problem Statement
 Using historical data from the Armed Conflict Location & Event Data research (ACLED), this research develops a predictive model to categorise conflict incidents in Kenya into four severity levels (Low, Moderate, High, and Critical). By achieving the accuracy, precision, F1-score and confusion matrix the approach assists government agencies, peacekeeping forces and humanitarian organisations in better allocating resources and prioritising response activities.
 
-## Business Understanding
+## 1.  Business Understanding
 Kenya has had a lot of protests in recent years, motivated by social, political, and economic issues. These incidents frequently intensify quickly and have different effects on the community. Decision-makers do not currently have access to efficient real-time tools for anticipating possible outcomes.
 
 Objectives :
@@ -16,7 +16,7 @@ b) Using past ACLED data, to create a Community Impact Score (CIS).
 
 c) Assist stakeholders in allocating resources and setting priorities for response activities.
 
-## Data Understanding
+## 2. Data Understanding
 The project makes use of information from the Armed Conflict Location & Event Data initiative (ACLED), which offers comprehensive logs of events connected to conflicts throughout Africa. More than 431,000 records from 1997 to 2025 are included in the raw dataset, with 17,812 events occurring in Kenya alone.
 
 Significant factors consist of:
@@ -27,7 +27,7 @@ Significant factors consist of:
 - Narrative descriptions.
 - Geographic coordinates.
 
-## 1. Data Wrangling
+## 3. Data Wrangling
 Here we will work on : 
 - Filtering Kenya-specific data (17,812 events).
 - Handling missing values (imputation and column dropping).
@@ -43,7 +43,7 @@ Here we will work on :
 
 which ensures that we have a clean, structured, and suitable format for analysis and modeling.
 
-## 2. Exploratory Data Analysis(EDA)
+## 4. Exploratory Data Analysis(EDA)
 
 The graph illustrates the distribution of conflict severity levels in Kenya, with the biggest number of occurrences falling under the "Low" severity category, followed by "Moderate," "High," and "Critical." This suggests that although disputes occur frequently, the majority are not very serious, though a significant number do.
 <img width="790" height="490" alt="Distribution of Conflict Severity levels" src="https://github.com/user-attachments/assets/fb759102-f542-4a61-82e9-d590b55cd3d0" />
@@ -58,14 +58,14 @@ Conflict severity fluctuates over time, with noticeable spikes during election y
 <img width="1190" height="590" alt="Severity level Trends over Time" src="https://github.com/user-attachments/assets/762de25a-812f-4bbf-99ba-a0ca962d372c" />
 
 
-## 3. Data Processing
+## 5. Data Processing
 To prevent data leaking, only features that were accessible prior to or during a conflict occurrence were employed to prepare the data for modelling.  These comprised important numerical and categorical information (e.g., year, month, latitude, longitude) as well as event type, actors, and location.
 
  To ensure class balance, stratified sampling was used to divide the data into training and testing sets.  Numerical features were standardised for consistency, while categorical features were one-hot encoded.
 
  SMOTE was used to improve model fairness and oversample minority classes in order to address class imbalance in the target variable (severity_level).
 
-## 4. Modelling and Evaluation
+## 6. Modelling and Evaluation
 
 The project framed conflict severity prediction as a multi-class classification problem with four levels: Low, Moderate, High, and Critical. Several models were tested:
 
@@ -78,13 +78,13 @@ Voting Ensemble: Combined Logistic Regression, Random Forest, and XGBoost, achie
 The Community Impact Score (CIS) was engineered to label severity, and class imbalance was addressed using SMOTE. The ensemble model consistently outperformed others in predicting both frequent and rare classes, making it ideal for early warning systems.
 
 
-## 6. Conclusion
+## 7. Conclusion
 
 This project demonstrated that conflict event severity in Kenya can be effectively predicted using historical ACLED data. By creating a Community Impact Score and categorizing severity into four levels, a robust multi-class model was developed. The best results came from XGBoost and a Voting Ensemble, both achieving 86% accuracy and strong performance on harder-to-predict classes like "Moderate" and "Critical."
 
 Key factors influencing severity included event type, civilian targeting, and primary actors. Visual analysis showed a clear link between severe events and political cycles, with hotspots in Nairobi, Kisumu, and Turkana.
 
-## 7. Recommendations
+## 8. Recommendations
 
 Deploy Predictive Models: Integrate the XGBoost or Ensemble model into early warning systems to support real-time conflict risk assessment.
 
